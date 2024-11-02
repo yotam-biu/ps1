@@ -21,7 +21,7 @@ jobs:
         setup-command: ''
         command: "./tests/hello_test.py"
         input: ''
-        expected-output: Hello
+        expected-output: 'Hello'
         comparison-method: exact
         timeout: 10
         max-score: 5
