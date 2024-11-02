@@ -16,7 +16,7 @@ jobs:
     - name: Make hello_test.sh executable
       run: |
         chmod +x ./.tests/hello_test.sh
-        chmod +x ./.tests/line2_chcaker_test.sh
+        chmod +x ./.tests/line2_checker_test.sh
     - name: hello test sh
       id: hello-test-sh
       uses: classroom-resources/autograding-io-grader@v1
