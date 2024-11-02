@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: hello test sh
         setup-command: ''
-        command: "./hello_test.sh"
+        command: "./test/hello_test.sh"
         input: ''
         expected-output: 'Hello'
         comparison-method: exact
