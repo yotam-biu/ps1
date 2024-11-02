@@ -13,6 +13,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    - name: Make hello_test.sh executable
+      run: |
+        chmod +x ./.tests/hello_test.sh
+        chmod +x ./.tests/line2_checker_test.sh
     - name: hello-world-test
       id: hello-world-test
       uses: classroom-resources/autograding-io-grader@v1
