@@ -23,7 +23,7 @@ jobs:
         setup-command: ''
         command: "./.tests/hello_test.sh"
         input: ''
-        expected-output: 'Hello'
+        expected-output: 'Hello World!'
         comparison-method: exact
         timeout: 10
         max-score: 10
