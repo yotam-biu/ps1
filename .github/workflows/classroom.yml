@@ -13,13 +13,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    - name: Make hello_test.sh executable
+      run: chmod +x ./.tests/hello_test.sh
     - name: hello test sh
       id: hello-test-sh
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: hello test sh
         setup-command: ''
-        command: "./test/hello_test.sh"
+        command: "./.tests/hello_test.sh"
         input: ''
         expected-output: 'Hello'
         comparison-method: exact
