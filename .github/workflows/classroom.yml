@@ -23,7 +23,7 @@ jobs:
       with:
         test-name: hello-world-test
         setup-command: ''
-        command: "./tests/hello_test.sh"
+        command: "./.tests/hello_test.sh"
         input: ''
         expected-output: 'Hello'
         comparison-method: exact
@@ -35,7 +35,7 @@ jobs:
       with:
         test-name: line2-test
         setup-command: ''
-        command: "./tests/line2_checker_test.sh"
+        command: "./.tests/line2_checker_test.sh"
         input: ''
         timeout: 10
         max-score: 5
