@@ -16,22 +16,29 @@ jobs:
     - name: Make hello_test.sh executable
       run: |
         chmod +x ./.tests/hello_test.sh
-        chmod +x ./.tests/line2_checker_test.sh
-    - name: hello test sh
-      id: hello-test-sh
+    - name: ".tests/line2_test.py"
+      id: tests-line2_test-py
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 10
+        max-score: 5
+        setup-command: ''
+    - name: output test
+      id: output-test
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: hello test sh
+        test-name: output test
         setup-command: ''
         command: "./.tests/hello_test.sh"
         input: ''
         expected-output: 'Hello World!'
         comparison-method: exact
         timeout: 10
-        max-score: 10
+        max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        HELLO-TEST-SH_RESULTS: "${{steps.hello-test-sh.outputs.result}}"
+        TESTS-LINE2_TEST-PY_RESULTS: "${{steps.tests-line2_test-py.outputs.result}}"
+        OUTPUT-TEST_RESULTS: "${{steps.output-test.outputs.result}}"
       with:
-        runners: hello-test-sh
+        runners: tests-line2_test-py,output-test
